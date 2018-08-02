@@ -1,3 +1,5 @@
-import React from "react"
+import React from 'react';
+import Hero from '../components/hero';
 
-export default () => <div>Hello world!</div>
+// Temporarily just displaying the hero
+export default () => <Hero />;
