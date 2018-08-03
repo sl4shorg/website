@@ -12,14 +12,14 @@ export default class Layout extends React.Component {
     isFinished: false,
     navigation: [{ name: 'About Us', to: '/about-us' }]
   };
-  isFirstRender = () => false;
+  isFirstRender = () => true;
   render = () => {
     if (this.isFirstRender()) {
       return (
         <React.Fragment>
           <InitialAnimation
             hasFinished={() => this.setState({ isFinished: true })}
-            navigation={navigation}
+            navigation={this.state.navigation}
           />
           <Transition
             from={{ opacity: 0 }}
