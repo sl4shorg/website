@@ -5,6 +5,7 @@ module.exports = {
       options: {
         pathToConfigModule: `src/utils/config.js`
       }
-    }
+    },
+    `gatsby-plugin-react-next`
   ]
 };
