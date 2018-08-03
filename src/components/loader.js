@@ -2,7 +2,7 @@ import React from 'react';
 import Logo from './logo';
 
 /**
- * Displays a page-wide hero, just with the white logo.
+ * Displays a page-wide loading screen, just with a rotating white logo.
  */
 export default () => (
   <div>

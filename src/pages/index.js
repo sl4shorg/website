@@ -1,5 +1,5 @@
 import React from 'react';
-import Hero from '../components/hero';
+import Loader from '../components/loader';
 
-// Temporarily just displaying the hero
-export default () => <Hero />;
+// Temporarily just displaying the loader
+export default () => <Loader />;
