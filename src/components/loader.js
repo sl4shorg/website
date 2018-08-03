@@ -40,7 +40,7 @@ const LogoImage = Keyframes.Spring({
 export default () => (
   <div>
     <LogoImage state="rotateInOut" onRest={() => console.log('Finished!')}>
-      {styles => <Logo size="50" isCentered style={styles} />}
+      {styles => <Logo size="100" isCentered style={styles} />}
     </LogoImage>
   </div>
 );
