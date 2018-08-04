@@ -1,5 +1,8 @@
 import React from 'react';
+import Headline from '../components/headline';
 
 export default () => (
-  <p>Here be dragons at /.</p>
+  <React.Fragment>
+    <Headline>Here be dragons.</Headline>
+  </React.Fragment>
 )
