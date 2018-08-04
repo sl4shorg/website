@@ -23,8 +23,8 @@ export default class Layout extends React.Component {
         <Slash pos={0} opacity={0.4} move={-20} zIndex="-2" />
         <Slash pos={10} opacity={0.2} move={20} zIndex="-1" />
         {this.state.isFinished && (
-          <Spring from={{ opacity: 0 }} to={{ opacity: 1 }}>
-            {styles => <Content styles={styles}>{this.props.children()}</Content>}
+          <Spring from={{ opacity: 0 }} to={{ opacity: 1 }} onRest={() => console.log('Finished!')}>
+            {styles => <Content style={styles}>{this.props.children()}</Content>}
           </Spring>
         )}
       </React.Fragment>

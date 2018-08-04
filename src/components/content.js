@@ -9,5 +9,5 @@ export default glamorous.div(props => ({
   top: '114px',
   width: 'calc(100vw - 64px)',
   color: 'white',
-  style: props.styles
+  style: props.style
 }));
