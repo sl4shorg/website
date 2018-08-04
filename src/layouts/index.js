@@ -1,4 +1,5 @@
 import React from 'react';
+import { Spring } from 'react-spring';
 import Topbar from '../components/topbar';
 import Slash from '../components/slash';
 import Content from '../components/content';
@@ -19,9 +20,13 @@ export default class Layout extends React.Component {
           animated={this.isAnimated()}
           hasFinished={() => this.setFinished()}
         />
-        <Slash pos={0} opacity={0.4} move={-20} zIndex="-2"></Slash>
-        <Slash pos={10} opacity={0.2} move={20} zIndex="-1"></Slash>
-        {this.state.isFinished && <Content>{this.props.children()}</Content>}
+        <Slash pos={0} opacity={0.4} move={-20} zIndex="-2" />
+        <Slash pos={10} opacity={0.2} move={20} zIndex="-1" />
+        {this.state.isFinished && (
+          <Spring from={{ opacity: 0 }} to={{ opacity: 1 }}>
+            {styles => <Content styles={styles}>{this.props.children()}</Content>}
+          </Spring>
+        )}
       </React.Fragment>
     );
   };
