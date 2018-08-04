@@ -1,5 +1,8 @@
 import glamorous from 'glamorous';
 
+/**
+ * The Navigation bar on top of the page.
+ */
 export default glamorous.div({
   position: 'fixed',
   left: '120px',

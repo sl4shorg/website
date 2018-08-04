@@ -1,47 +1,21 @@
-import React from 'react';
-import { Transition } from 'react-spring';
-import { push } from 'gatsby-link';
-import InitialAnimation from '../components/initial-animation';
-import Logo from '../components/logo';
-import Navbar from '../components/navbar';
-import NavbarButton from '../components/navbar-button';
+import React, { Children } from 'react';
+import Topbar from '../components/topbar';
 import Content from '../components/content';
 
 export default class Layout extends React.Component {
-  state = {
-    isFinished: false,
-    navigation: [{ name: 'About Us', to: '/about-us' }]
-  };
-  isFirstRender = () => true;
+  state = { isFinished: false };
+  setFinished = () => {
+    this.setState({ isFinished: true });
+    sessionStorage.setItem('hasBeenAnimated', true);
+  }
+  isAnimated = () => {
+    return sessionStorage.getItem('hasBeenAnimated') == undefined;
+  }
   render = () => {
-    if (this.isFirstRender()) {
-      return (
-        <React.Fragment>
-          <InitialAnimation
-            hasFinished={() => this.setState({ isFinished: true })}
-            navigation={this.state.navigation}
-          />
-          <Transition
-            from={{ opacity: 0 }}
-            enter={{ opacity: 1 }}
-            leave={{ opacity: 0 }}
-          >
-            {this.state.isFinished &&
-              (styles => (
-                <Content style={styles}>{this.props.children()}</Content>
-              ))}
-          </Transition>
-        </React.Fragment>
-      );
-    }
     return (
       <React.Fragment>
-        <Logo size={50} fixed={{ left: '32px', top: '32px' }} />
-        <Navbar>
-          {this.state.navigation.map(nav => (
-            <NavbarButton onClick={() => push(nav.to)}>{nav.name}</NavbarButton>
-          ))}
-        </Navbar>
+        <Topbar animated={this.isAnimated()} hasFinished={() => this.setFinished()} />
+        {this.state.isFinished && <Content>{this.props.children()}</Content>}
       </React.Fragment>
     );
   };

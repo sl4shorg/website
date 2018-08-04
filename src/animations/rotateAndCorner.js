@@ -1,5 +1,8 @@
 import { TimingAnimation, Easing } from 'react-spring/dist/addons.cjs';
 
+/**
+ * The animation keyframes for the initial logo animation.
+ */
 export default ({ size }) => [
   {
     impl: TimingAnimation,
