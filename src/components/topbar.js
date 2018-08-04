@@ -52,6 +52,7 @@ export default class TopBar extends React.Component {
                   <NavbarButton to="/" activeStyle={activeLinkStyle}>Home</NavbarButton>
                   <NavbarButton to="/team" activeStyle={activeLinkStyle}>Team</NavbarButton>
                   <NavbarButton to="/projects" activeStyle={activeLinkStyle}>Projects</NavbarButton>
+                  <NavbarButton to="/blog" activeStyle={activeLinkStyle}>Blog</NavbarButton>
                   <NavbarButton to="/contact" activeStyle={activeLinkStyle}>Contact</NavbarButton>
                 </Navbar>
               </div>
