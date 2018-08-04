@@ -5,5 +5,6 @@ import glamorous from 'glamorous';
  */
 export default glamorous.h1({
   marginTop: '1.8rem',
-  fontSize: '3.6rem'
+  marginBottom: '0.6rem',
+  fontSize: '4.2rem'
 });
