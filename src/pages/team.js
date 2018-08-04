@@ -1,5 +1,5 @@
 import React from 'react';
 
 export default () => (
-  <p>Here be dragons at /.</p>
+  <p>Here be dragons at /team.</p>
 )
