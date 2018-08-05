@@ -1,5 +1,6 @@
 import React from 'react';
 import { Transition } from 'react-spring';
+import css from '../utils/anim';
 import Logo from './logo';
 import Animated from './animated';
 import Navbar from '../components/navbar';
@@ -29,7 +30,7 @@ export default class TopBar extends React.Component {
         configGen={configGen}
         configGenParams={configGenParams}
       >
-        {styles => <Logo size={configGenParams.size} fixed style={styles} />}
+        {styles => <Logo size={configGenParams.size} fixed style={css(styles)} />}
       </Animated>
     ) : (
       <Logo

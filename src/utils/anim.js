@@ -1,13 +1,14 @@
 /**
- * Cast object properties to css properties.
+ * Casts custom properties to css properties.
+ * Accepts all css properties, and more:
+ * @param rotate - the rotation in degrees
+ * @param x - the translation in x
+ * @param y - the translation in y
+ * @param scale - the scale
  */
 const css = style => ({
-  opacity: style.opacity,
-  left: style.left,
-  right: style.right,
-  top: style.top,
-  bottom: style.bottom,
-  transform: buildTransformString(style)
+  transform: buildTransformString(style),
+  ...style
 });
 
 /**
@@ -16,7 +17,7 @@ const css = style => ({
 const buildTransformString = ({ rotate, x, y, scale }) => {
   let string = '';
   if(rotate != undefined) string += `rotate(${rotate}deg) `;
-  if(x != undefined && y != undefined) string += `translate(${x}, ${y}) `;
+  if(x != undefined || y != undefined) string += `translate(${x || 0}px, ${y || 0}px) `;
   if(scale != undefined) string += `scale(${scale})`;
   return string;
 };

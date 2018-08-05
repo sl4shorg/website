@@ -1,7 +1,6 @@
 import React from 'react';
 import { Img } from 'glamorous';
 import { push } from "gatsby-link";
-import css from '../utils/anim';
 import logo from '../img/logo-white.png';
 
 /**
@@ -23,6 +22,6 @@ export default ({ size, fixed, style }) => (
     top={fixed && fixed.top}
     bottom={fixed && fixed.bottom}
     margin={0}
-    style={style && css(style)}
+    style={style}
   />
 );
